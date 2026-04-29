@@ -9,9 +9,9 @@ export const portfolioData = {
     location: "Eg",
     bio: "I'm a Computer Science student passionate about building full-stack web applications. With expertise in the MEAN stack (MongoDB, Express, Angular, Node.js), I create scalable solutions with clean architecture and focus on both backend robustness and modern, responsive UI.",
     cvLink: "#",
-    logo: "src/assets/images/logo2.png",
+    logo: "/public/logo2.png",
     profileImage:
-      "src/assets/images/badr2.jpeg",
+      "/public/badr2.jpeg",
     social: [
       {
         name: "GitHub",
