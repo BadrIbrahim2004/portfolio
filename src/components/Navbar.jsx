@@ -103,25 +103,28 @@ const Navbar = () => {
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </button>
             ))}
-          </div>
 
-            {/* Download CV Button */}
+            {/* Download CV Button - Mobile only (inside menu) */}
             <a
               href={personal.cvLink}
               download
-              className="btn-custom btn-primary btn-sm"
-              style={{
-                background: '#00e5ff',
-                color: '#0f172a',
-                border: 'none',
-                fontWeight: '600',
-                textDecoration: 'none'
-              }}
+              className="btn-custom btn-primary btn-sm mobile-cv-btn"
             >
               <span>Download CV</span>
-              <i className="bi bi-download" style={{marginLeft: '0.5rem'}}></i>
+              <i className="bi bi-download" style={{ marginLeft: '0.5rem' }}></i>
             </a>
-          
+          </div>
+
+          {/* Download CV Button - Desktop only (outside menu) */}
+          <a
+            href={personal.cvLink}
+            download
+            className="btn-custom btn-primary btn-sm desktop-cv-btn"
+          >
+            <span>Download CV</span>
+            <i className="bi bi-download" style={{ marginLeft: '0.5rem' }}></i>
+          </a>
+
         </div>
       </nav>
 

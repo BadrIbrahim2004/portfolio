@@ -28,12 +28,12 @@ const About = () => {
       ref={sectionRef}
     >
       <div className="container-max">
-        <SectionTitle title={about.title} center />
+        <SectionTitle title={about.title} center visible={isVisible} />
 
         {/* About Description */}
         <div className="row justify-content-center">
           <div className="col-lg-8 about-description">
-            <p className={isVisible ? "fade-in-up" : ""}>{about.description}</p>
+            <p className={`fade-in-up ${isVisible ? "visible" : ""}`}>{about.description}</p>
           </div>
         </div>
 
@@ -42,8 +42,8 @@ const About = () => {
           {about.features.map((feature, index) => (
             <div
               key={index}
-              className={`feature-item ${isVisible ? "fade-in-up" : ""}`}
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`feature-item fade-in-up ${isVisible ? "visible" : ""}`}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
               <Card hover variant="glass">
                 <div className="feature-content">

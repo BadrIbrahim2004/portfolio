@@ -103,6 +103,7 @@ const Contact = () => {
           title={contact.title}
           subtitle={contact.description}
           center
+          visible={isVisible}
         />
 
         <div className="row justify-content-center">
@@ -211,7 +212,7 @@ const Contact = () => {
         </div>
 
         {/* Social Links */}
-        <div className={`contact-social ${isVisible ? "fade-in-up" : ""}`}>
+        <div className={`contact-social fade-in-up ${isVisible ? "visible" : ""}`}>
           <p className="social-title">Or connect with me on social media</p>
           <div className="contact-social-links">
             {personal.social.map((link) => (

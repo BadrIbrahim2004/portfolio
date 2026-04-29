@@ -6,13 +6,12 @@ const SectionTitle = ({
   subtitle,
   center = true,
   className = "",
-  animated = true,
+  visible = true,
 }) => {
   return (
     <div
-      className={`section-title ${center ? "text-center" : ""} ${
-        animated ? "fade-in-up" : ""
-      } ${className}`}
+      className={`section-title ${center ? "text-center" : ""} ${visible ? "fade-in-up visible" : "fade-in-up"
+        } ${className}`}
     >
       <h2 className="title-main">{title}</h2>
       {subtitle && <p className="subtitle">{subtitle}</p>}

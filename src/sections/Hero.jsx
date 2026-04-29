@@ -27,7 +27,7 @@ const Hero = () => {
       <div className="container-max">
         <div className="row align-items-center g-5">
           {/* Left Content */}
-          <div className="col-lg-6 hero-content slide-in-left">
+          <div className="col-lg-6 hero-content fade-in-up visible">
             <h1 className="hero-greeting">
               Hi, I'm <br />  <span className="gradient-text">{personal.name} </span>
 
@@ -84,7 +84,7 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Profile Image */}
-          <div className="col-lg-6 hero-image slide-in-right">
+          <div className="col-lg-6 hero-image fade-in-up visible">
             <div className="profile-image-container">
               <div className="profile-glow"></div>
               <img

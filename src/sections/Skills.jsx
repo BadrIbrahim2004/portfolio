@@ -29,14 +29,14 @@ const Skills = () => {
       ref={sectionRef}
     >
       <div className="container-max">
-        <SectionTitle title="Technical Skills" center />
+        <SectionTitle title="Technical Skills" center visible={isVisible} />
 
         <div className="skills-grid">
           {skills.map((category, index) => (
             <div
               key={index}
-              className={`skill-category ${isVisible ? "fade-in-up" : ""}`}
-              style={{ animationDelay: `${index * 150}ms` }}
+              className={`skill-category fade-in-up ${isVisible ? "visible" : ""}`}
+              style={{ transitionDelay: `${index * 200}ms` }}
             >
               <Card hover variant="glass">
                 <h3 className="category-title">{category.category}</h3>

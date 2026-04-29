@@ -23,14 +23,14 @@ const Education = () => {
   return (
     <section id="education" className="education section" ref={sectionRef}>
       <div className="container-max">
-        <SectionTitle title="Education & Learning" center />
+        <SectionTitle title="Education & Learning" center visible={isVisible} />
 
         <div className="timeline">
           {education.map((item, index) => (
             <div
               key={index}
-              className={`timeline-item ${isVisible ? "fade-in-up" : ""}`}
-              style={{ animationDelay: `${index * 150}ms` }}
+              className={`timeline-item fade-in-up ${isVisible ? "visible" : ""}`}
+              style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className="timeline-marker">
                 <div className="timeline-dot"></div>

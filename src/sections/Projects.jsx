@@ -10,6 +10,29 @@ const Projects = () => {
   const { projects } = portfolioData;
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [activeOverlay, setActiveOverlay] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleCardClick = (index) => {
+    if (isMobile) {
+      setActiveOverlay(activeOverlay === index ? null : index);
+    }
+  };
+
+  const handleCloseClick = (e) => {
+    e.stopPropagation();
+    setActiveOverlay(null);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,16 +52,21 @@ const Projects = () => {
           title="Featured Projects"
           subtitle="Showcasing my latest works and technical expertise"
           center
+          visible={isVisible}
         />
 
         <div className="projects-grid">
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`project-card-wrapper ${isVisible ? "fade-in-up" : ""}`}
-              style={{ animationDelay: `${index * 150}ms` }}
+              className={`project-card-wrapper fade-in-up ${isVisible ? "visible" : ""}`}
+              style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <Card hover className="project-card">
+              <Card
+                hover
+                className={`project-card ${activeOverlay === index ? 'overlay-active' : ''}`}
+                onClick={() => handleCardClick(index)}
+              >
                 {/* Project Image */}
                 <div className="project-image-container">
                   <img
@@ -47,6 +75,13 @@ const Projects = () => {
                     className="project-image"
                   />
                   <div className="project-overlay">
+                    <button
+                      className="overlay-close-btn"
+                      onClick={handleCloseClick}
+                      aria-label="Close description"
+                    >
+                      <i className="bi bi-x-lg"></i>
+                    </button>
                     <div className="overlay-content">
                       <p className="overlay-description">
                         {project.longDescription}

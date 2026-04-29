@@ -372,7 +372,7 @@
   color: var(--text-primary);
   font-weight: 500;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 0.2s ease-out;
   position: relative;
   padding: var(--spacing-sm) var(--spacing-md);
   font-size: var(--font-size-sm);
@@ -388,7 +388,7 @@
   width: 0;
   height: 2px;
   background: var(--accent);
-  transition: all var(--transition-fast);
+  transition: all 0.2s ease-out;
   transform: translateX(-50%);
 }
 
@@ -418,13 +418,15 @@
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   background: none;
   border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
-  padding: var(--spacing-sm);
-  width: 32px;
-  height: 32px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
 }
@@ -440,11 +442,12 @@
 }
 
 .hamburger span {
-  width: 20px;
+  width: 22px;
   height: 2px;
   background: var(--text-primary);
   border-radius: 2px;
   transition: all var(--transition-base);
+  display: block;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -459,10 +462,46 @@
   transform: rotate(-45deg) translateY(-6px);
 }
 
+/* Desktop CV button - visible only on desktop */
+.desktop-cv-btn {
+  display: flex;
+  align-items: center;
+  background: #00e5ff;
+  color: #0f172a;
+  border: none;
+  font-weight: 600;
+  text-decoration: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+}
+
+.desktop-cv-btn:hover {
+  background: #00d4e5;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Mobile CV button - hidden on desktop */
+.mobile-cv-btn {
+  display: none;
+}
+
 /* Mobile Responsive - Enhanced Design */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+    order: 2;
+    margin-left: auto;
+  }
+
+  .navbar-logo {
+    order: 1;
+  }
+
+  .navbar-content {
+    flex-wrap: wrap;
   }
 
   .navbar-links {
@@ -476,13 +515,16 @@
     backdrop-filter: blur(12px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: var(--spacing-xl) var(--spacing-lg);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px);
     transition: all var(--transition-base);
     pointer-events: none;
     border-radius: 0 0 var(--radius-md) var(--radius-md);
+    order: 3;
+    width: 100%;
+    align-items: center;
   }
 
   .navbar-links.show {
@@ -494,10 +536,12 @@
   }
 
   .nav-link {
-    padding: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
     font-size: var(--font-size-base);
     text-align: center;
     border-radius: var(--radius-sm);
+    width: 100%;
+    max-width: 200px;
   }
 
   .nav-link::after {
@@ -507,6 +551,34 @@
   .nav-link.active {
     background: var(--accent-light);
     border: 1px solid var(--accent-border);
+  }
+
+  /* Mobile CV button inside menu */
+  .mobile-cv-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 200px;
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: #00e5ff;
+    color: #0f172a;
+    border: none;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+  }
+
+  .mobile-cv-btn:hover {
+    background: #00d4e5;
+    transform: translateY(-2px);
+  }
+
+  /* Hide desktop CV button on mobile */
+  .desktop-cv-btn {
+    display: none;
   }
 }
 
