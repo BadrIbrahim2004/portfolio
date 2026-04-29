@@ -1,0 +1,14 @@
+<svg width="150" height="45" viewBox="0 0 150 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background circle -->
+    <circle cx="22.5" cy="22.5" r="20" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" />
+
+    <!-- Letter B -->
+    <text x="22.5" y="32" font-family="Poppins, sans-serif" font-size="28" font-weight="700" fill="#6366f1"
+        text-anchor="middle" dominant-baseline="middle">B</text>
+
+    <!-- Text "adr" -->
+    <text x="45" y="22.5" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="white">adr</text>
+
+    <!-- Dot -->
+    <circle cx="105" cy="22.5" r="3" fill="#22d3ee" />
+</svg>
