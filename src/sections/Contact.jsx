@@ -6,6 +6,14 @@ import Card from "../components/Card";
 import { isElementInViewport } from "../utils/scrollUtils";
 import "../assets/sections.css";
 
+// EmailJS configuration - Replace with your actual EmailJS credentials
+const EMAILJS_CONFIG = {
+  SERVICE_ID: "service_1kdhiit",      // From EmailJS dashboard
+  TEMPLATE_ID: "template_dgg277m",    // From EmailJS templates
+  PUBLIC_KEY: "5DZ6qBg-dj55EseLa",      // From EmailJS account
+  TO_EMAIL: "badr.ibrahim.dev@gmail.com"
+};
+
 const Contact = () => {
   const { contact, personal } = portfolioData;
   const sectionRef = useRef(null);
@@ -81,15 +89,42 @@ const Contact = () => {
 
     setLoading(true);
 
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      // Import EmailJS dynamically
+      const emailjs = await import("@emailjs/browser");
+
+      // Initialize with public key
+      emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: EMAILJS_CONFIG.TO_EMAIL,
+        reply_to: formData.email,
+      };
+
+      // Send email
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams
+      );
+
       setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
-      setLoading(false);
 
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitted(false), 5000);
-    }, 1000);
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      setErrors({
+        submit: "Failed to send message. Please try again or contact me directly via email."
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -184,6 +219,13 @@ const Contact = () => {
                       <span className="error-message">{errors.message}</span>
                     )}
                   </div>
+
+                  {/* Submit Error */}
+                  {errors.submit && (
+                    <div className="error-message submit-error" style={{ textAlign: "center", marginBottom: "1rem" }}>
+                      <i className="bi bi-exclamation-circle"></i> {errors.submit}
+                    </div>
+                  )}
 
                   {/* Submit Button */}
                   <Button
