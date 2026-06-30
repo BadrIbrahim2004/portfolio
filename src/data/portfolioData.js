@@ -132,7 +132,7 @@ export const portfolioData = {
       title: "Friends Desserts",
       description: "A high-performance, fully responsive digital menu web application tailored for food and sweet businesses.",
       longDescription: "Designed a modern Dark Theme UI/UX and integrated seamless multi-language support (Arabic/English) with dynamic client-side filtering for optimized user browsing and a custom communication FAB.",
-      image: "public/friends screen.png",
+      image: "/friends screen.png",
       technologies: ["React", "Bootstrap 5", "Vite"],
       liveUrl: "https://friends-menu-c4xt.vercel.app/",
       githubUrl: "https://github.com/BadrIbrahim2004/friends-menu"
@@ -142,7 +142,7 @@ export const portfolioData = {
       title: "CinemaX Platform",
       description: "A full-stack cinema booking system developed as a collaborative graduation project.",
       longDescription: "Features an advanced 2D interactive seat mapping system, real-time movie management components, customized styling, and a robust Mongoose backend with secure validation models.",
-      image: "public/cinemax screen.png",
+      image: "/cinemax screen.png",
       technologies: ["Angular", "Node.js", "Express.js", "MongoDB", "Mongoose"],
       // liveUrl: "https://your-cinemax-live-link.vercel.app",
       githubUrl: "https://github.com/CinemaX-Nti/back-end"
@@ -152,7 +152,7 @@ export const portfolioData = {
       title: "Personal Portfolio",
       description: "A modern, responsive portfolio website showcasing technical projects, components, and skills.",
       longDescription: "Focused on clean layouts, optimal contrast, accessibility standards, standardized custom UI components, and smooth navigation to highlight professional identity.",
-      image: "public/portfolio screen.png", // تقدر تغيرها بصورة موقعك الحقيقي
+      image: "/portfolio screen.png", // تقدر تغيرها بصورة موقعك الحقيقي
       technologies: ["React", "Bootstrap", "Custom CSS", "Vercel"],
       liveUrl: "https://badr-portfolio-seven.vercel.app/",
       githubUrl: "https://github.com/BadrIbrahim2004/portfolio"
@@ -162,7 +162,7 @@ export const portfolioData = {
       title: "Digital Business Card",
       description: "A modern, responsive digital business card designed for seamless professional networking.",
       longDescription: "Developed a centralized professional hub featuring dynamic social links, direct contact actions, portfolio integration, and embedded payment options (InstaPay/Vodafone Cash). Optimized for fast loading and mobile-first responsiveness.",
-      image: "public/digital-card screen.png", 
+      image: "/digital-card screen.png", 
       technologies: ["React", "Custom CSS", "Vercel"],
     
       liveUrl: "https://digital-card-ten-zeta.vercel.app/",
