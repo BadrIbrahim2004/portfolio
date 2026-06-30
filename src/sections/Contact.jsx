@@ -6,11 +6,10 @@ import Card from "../components/Card";
 import { isElementInViewport } from "../utils/scrollUtils";
 import "../assets/sections.css";
 
-// EmailJS configuration - Replace with your actual EmailJS credentials
 const EMAILJS_CONFIG = {
-  SERVICE_ID: "service_1kdhiit",      // From EmailJS dashboard
-  TEMPLATE_ID: "template_dgg277m",    // From EmailJS templates
-  PUBLIC_KEY: "5DZ6qBg-dj55EseLa",      // From EmailJS account
+  SERVICE_ID: "service_1kdhiit",     
+  TEMPLATE_ID: "template_dgg277m",    
+  PUBLIC_KEY: "5DZ6qBg-dj55EseLa",      
   TO_EMAIL: "badr.ibrahim.dev@gmail.com"
 };
 
