@@ -8,7 +8,7 @@ export const portfolioData = {
     phone: "01062678672",
     location: "Eg",
     bio: "I'm a Computer Science student passionate about building full-stack web applications. With expertise in the MEAN stack (MongoDB, Express, Angular, Node.js), I create scalable solutions with clean architecture and focus on both backend robustness and modern, responsive UI.",
-    cvLink: "public/Badr_Ibrahim_CV1.pdf",
+    cvLink: "/Badr_Ibrahim_CV1.pdf",
     logo: "/logo.png",
     profileImage: "/badr.jpeg",
     social: [
